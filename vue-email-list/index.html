@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vue-email-list</title>
+    <title>vue-email-list</title>    
 </head>
 <body>
     <div id="app">
-        
+        <ul>
+            <li v-for="email in emails">{{email}}</li>
+        </ul>
+
+
     </div>
 
 
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
