@@ -7,63 +7,19 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <div id="app">
-       
-        <div class="container d-flex">
-            <div class="colonne d-flex">
-                <section></section>
-                <section></section>
-                <section></section>
-                <section></section>
-                <section></section>
-                <section></section>
-            </div>
-            <div class="colonne d-flex">
-                <section></section>
-                <section></section>
-                <section></section>
-                <section></section>
-                <section></section>
-                <section></section>
-            </div>
-            <div class="colonne d-flex">
-                <section></section>
-                <section></section>
-                <section></section>
-                <section></section>
-                <section></section>
-                <section></section>
-            </div>
-            <div class="colonne d-flex">
-                <section></section>
-                <section></section>
-                <section></section>
-                <section></section>
-                <section></section>
-                <section></section>
-            </div>
-            <div class="colonne d-flex">
-                <section></section>
-                <section></section>
-                <section></section>
-                <section></section>
-                <section></section>
-                <section></section>
-            </div>
-            <div class="colonne d-flex">
-                <section></section>
-                <section></section>
-                <section></section>
-                <section></section>
-                <section></section>
-                <section></section>
+    <div id="app"> 
+       <div class="container d-flex">
+            <div v-for="(colonne,index in column" class="colonne d-flex" @click="selectCol(index)">
+                <div v-for="(griglia,counter) in column[index].section" class="section" @click="selectGriglia(counter)">
+                    <p>{{griglia.number}}</p>
+                </div>
             </div>
         </div>
     </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
 </html>

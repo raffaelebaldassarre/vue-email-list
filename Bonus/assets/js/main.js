@@ -7,12 +7,166 @@
 let app = new Vue ({
     el: "#app",
     data : {
-      
+      colonna : 0,
+      griglia : 0,
+      numberRandom : "",
+      column : [
+        {
+          section : [
+            {
+              
+            },
+            {
+              
+            },
+            {
+
+            },
+            {
+              
+            },
+            {
+              
+            },
+            {
+              
+            }
+          ]
+        },
+        {
+          section : [
+            {
+
+            },
+            {
+
+            },
+            {
+
+            },
+            {
+
+            },
+            {
+
+            },
+            {
+
+            }
+          ]
+        },
+        {
+          section : [
+            {
+
+            },
+            {
+
+            },
+            {
+
+            },
+            {
+
+            },
+            {
+
+            },
+            {
+
+            }
+          ]
+        },
+        {
+          section : [
+            {
+
+            },
+            {
+
+            },
+            {
+
+            },
+            {
+
+            },
+            {
+
+            },
+            {
+
+            }
+          ]
+        },
+        {
+          section : [
+            {
+
+            },
+            {
+
+            },
+            {
+
+            },
+            {
+
+            },
+            {
+
+            },
+            {
+
+            }
+          ]
+        },
+        {
+          section : [
+            {
+
+            },
+            {
+
+            },
+            {
+
+            },
+            {
+
+            },
+            {
+
+            },
+            {
+
+            }
+          ]
+        },
+      ],
     },
-    mounted () {
+    methods : {
+      selectCol(index){
+        this.colonna = index;
+        //console.log(index);
+        this.column[index].section[this.griglia].number = this.numberRandom;
+        this.randomNumber();
+        console.log(this.numberRandom);
+      },
+      selectGriglia(counter){
+        this.griglia = counter;
+        //console.log(counter);
+      },
+      randomNumber(){
         axios.get('https://flynn.boolean.careers/exercises/api/random/int')
-          .then(response => {
-              console.log(response.data.response);       
-          })
+        .then(response => {
+          let randomNumber = response.data.response;
+          this.numberRandom = randomNumber;  
+        })
       }
+    },
+    mounted (){
+      this.randomNumber();
+      this.selectCol;
+    }
 });
