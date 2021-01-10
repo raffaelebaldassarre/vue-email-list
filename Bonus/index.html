@@ -9,9 +9,10 @@
 <body>
     <div id="app"> 
        <div class="container d-flex">
-            <div v-for="(colonne,index in column" class="colonne d-flex" @click="selectCol(index)">
-                <div v-for="(griglia,counter) in column[index].section" class="section" @click="selectGriglia(counter)">
-                    <p>{{griglia.number}}</p>
+            <div v-for="(colonne,index in column" class="colonne d-flex">
+                <div v-for="(griglia,counter) in column[index].section" class="section d-flex" @click="selectGriglia(counter,index)">
+                    <p v-if="griglia.number > 0 && griglia.number < 6" class="yellow d-flex">{{griglia.number[0]}}</p>
+                    <p v-if= "griglia.number > 5" class="green d-flex">{{griglia.number[0]}}</p>
                 </div>
             </div>
         </div>

@@ -151,7 +151,7 @@ let app = new Vue ({
           section : [
             {
               number : [
-
+                
               ]
             },
             {
@@ -218,16 +218,14 @@ let app = new Vue ({
       ],
     },
     methods : {
-      selectCol(index){
-        this.colonna = index;
-      },
-      selectGriglia(counter){
+      selectGriglia(counter,index){
         this.griglia = counter;
+        this.colonna = index;
         this.randomNumber();
-        console.log(this.numberRandom);
-        this.column[this.colonna].section[counter].number.pop();
-        this.column[this.colonna].section[counter].number.push(this.numberRandom);
-        console.log(this.column[this.colonna].section[counter].number);
+        //console.log(this.numberRandom);
+        this.column[this.colonna].section[this.griglia].number.pop();
+        this.column[this.colonna].section[this.griglia].number.push(this.numberRandom);
+        //console.log(this.column[this.colonna].section[this.griglia].number);
       },
       randomNumber(){
         axios.get('https://flynn.boolean.careers/exercises/api/random/int')
