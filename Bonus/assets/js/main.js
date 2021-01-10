@@ -14,132 +14,204 @@ let app = new Vue ({
         {
           section : [
             {
-              
-            },
-            {
-              
-            },
-            {
+              number : [
 
+              ]
             },
             {
-              
+              number : [
+
+              ]
             },
             {
-              
+              number : [
+
+              ]
             },
             {
-              
+              number : [
+
+              ]
+            },
+            {
+              number : [
+
+              ]
+            },
+            {
+              number : [
+
+              ]
             }
           ]
         },
         {
           section : [
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             }
           ]
         },
         {
           section : [
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             }
           ]
         },
         {
           section : [
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             }
           ]
         },
         {
           section : [
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             }
           ]
         },
         {
           section : [
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             },
             {
+              number : [
 
+              ]
             }
           ]
         },
@@ -148,14 +220,14 @@ let app = new Vue ({
     methods : {
       selectCol(index){
         this.colonna = index;
-        //console.log(index);
-        this.column[index].section[this.griglia].number = this.numberRandom;
-        this.randomNumber();
-        console.log(this.numberRandom);
       },
       selectGriglia(counter){
         this.griglia = counter;
-        //console.log(counter);
+        this.randomNumber();
+        console.log(this.numberRandom);
+        this.column[this.colonna].section[counter].number.pop();
+        this.column[this.colonna].section[counter].number.push(this.numberRandom);
+        console.log(this.column[this.colonna].section[counter].number);
       },
       randomNumber(){
         axios.get('https://flynn.boolean.careers/exercises/api/random/int')
@@ -167,6 +239,5 @@ let app = new Vue ({
     },
     mounted (){
       this.randomNumber();
-      this.selectCol;
     }
 });
